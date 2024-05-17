@@ -1,0 +1,1412 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+	  
+input {
+    display: none;
+  }
+  
+  .open {
+    background-color: #3c3c3c;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+    position: sticky;
+    top: 8px;
+  }
+  
+  .open:before {
+    content: "";
+    background-color: #3c3c3c;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: -8px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+  }
+  
+  .open:after {
+    content: "";
+    background-color: #3c3c3c;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: 4px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+
+  }
+  
+  .menuOpen {
+    width: 24px;
+    height: 20px;
+    display: block;
+    padding: 15px;
+    cursor: pointer;
+    float: right;
+    margin-right: 32px;
+  }
+  
+  .menuOpen:hover .open:before {
+    top: -9px;
+  }
+  
+  .menuOpen:hover .open:after {
+    top: 5px;
+  }
+  
+  .menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: black;
+  }
+  
+  .menu label {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-size: 100%;
+    cursor: pointer;
+  }
+  
+  .menu .menuContent {
+    position: relative;
+    top: 50%;
+    font-size: 54px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: -170px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: Trebuchet MS;
+    text-transform: uppercase;
+    padding: 10px 0;
+    
+  }
+  
+  .menu ul li a:hover {
+    color: #ff8702;
+  }
+  
+  .menu ul li:hover {
+    background: white;
+  }
+  
+  .menuEffects {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    
+  }
+  
+  .menuEffects ul {
+    transform: translateY(0%);
+    transition: all 0.5s;
+  }
+  
+  #menuToggle:checked ~ .menuEffects {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+  }
+  
+  #menuToggle:checked ~ .menuEffects ul {
+    opacity: 1;
+    flex-direction: column;
+  }
+  
+  #menuToggle:checked ~ .menuOpen .open {
+    background-color: transparent;
+    z-index: 1;
+  }
+  
+  #menuToggle:checked ~ .menuOpen .open:before {
+    content: "";
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  #menuToggle:checked ~ .menuOpen .open:after {
+    content: "";
+    background-color: white;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  #menuToggle:not(:checked) ~ .menuEffects ul {
+    transform: translateY(-30%);
+  }
+
+
+
+
+
+@font-face {
+    font-family: "thefont";
+    src: url("GreatVibes-Regular-webfont.ttf");
+}
+
+@font-face{
+     font-family: "myfont";
+     src:url("JosefinSans-Regular.ttf");
+}
+
+h1{
+    font-family: "myfont";  
+}
+
+
+
+/* Default (light) mode styles */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+
+    .test{
+        color: white;
+    }
+
+    .aba{
+        color: white;
+    }
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "myfont"; 
+    margin-right: 270px;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "myfont"; 
+    margin-left: 70px;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 26px;
+    font-family: "myfont"; 
+}
+
+.logo{
+    height: 10vh;
+}
+
+.darkermode{
+        position: absolute;
+        height: 40px;
+          top: 20px;
+        right: 210px;
+}
+
+// .darkmode{
+
+//         position: relative;
+//         right: 200px;
+//         height: 40px;
+//         margin-bottom: 20px;
+// }
+
+a{
+    margin: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    margin-right: 20px;
+    font-family: "myfont"; 
+}
+.aba{
+    color: black;
+}
+
+.ser{
+    color: purple;
+}
+
+.test{
+    color: black;
+}
+
+
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "myfont";
+    padding-bottom: 100px;
+    // margin-left: 70px;
+    
+   
+
+.ING{
+    margin-right: 100px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: "myfont"; 
+}
+
+p{
+    font-size: 19px;
+    font-family: "myfont"; 
+}
+
+button{
+    margin-top: 20px;
+    padding: 8px;
+    color: white;
+    background-color: purple;
+    border-color: purple;
+}
+
+.button2{
+    color: black;
+    background-color: white;
+    border-color: purple;
+}
+
+.pic1{
+    margin-top: 116px;
+    padding: 1px;
+    height: 80vh;
+}
+
+.pic2{
+    padding: 1px;
+    height: 80vh;
+
+}
+
+.pic3{
+    margin-top: 116px; 
+    padding: 1px;
+    height: 80vh;
+}
+
+.pic4{
+    padding: 1px;
+    height: 80vh;
+}
+
+.watch{
+    margin-top: 36px;
+    color: purple;
+}
+
+.trust{
+    margin-top: 10px;
+}
+
+}
+
+.section2{
+
+
+    // margin-left: 80px;
+
+    h2{
+        font-family: "myfont"; 
+        font-size: 20px; 
+        margin-left: 70px; 
+    }
+
+    .p1{
+        font-family: "myfont"; 
+    }
+
+    .p2{
+        font-family: "myfont"; 
+        margin-left: 35px; 
+        margin-top: 1rem;
+    }
+
+    .sec2mini{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+   .backk{
+    background-image: url("Pictures/WhatsApp Image 2024-05-02 at 16.24.13_11af13b4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53vh;
+    width: 378px;
+    margin-left: 35px;
+}
+   
+
+        .picc1{
+            height: 50vh;
+            margin-bottom: 107px;
+        }
+
+        .pecc2{
+            height: 50vh;
+            margin-left: -5px;
+            margin-top: 82px; 
+        }
+    }
+
+    .bhatani{
+        margin-top: 78px;
+    }
+
+    .youtube{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 378px;
+        margin-top: 159px;
+        height: 27px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.section2 button{
+    margin-top: 28px;
+    margin-left: 28px;
+    padding: 8px;
+    color: white;
+    background-color: purple;
+    border-color: purple;
+    font-family: "myfont"; 
+    font-size: 14px;
+}
+
+.section3{
+    margin-top: 85px;
+    
+}
+
+.section33{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "myfont"; 
+}
+
+.digital{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    margin: 30px;
+    width: 314px;
+    height: 80vh;
+    background-color: purple;
+    font-family: "myfont"; 
+}
+
+.digital p{
+    margin: 9px;
+    font-family: "myfont"; 
+}
+
+.mufananidzo1{
+    height: 80vh;
+
+
+    .event{
+        color: #ffffff;
+        margin-top: 468px;
+        margin-right: 659px;
+        position: absolute;
+    }
+}
+
+
+
+.arrow1{
+    position: absolute;
+    height: 6vh;
+    margin-top: 467px;
+    margin-right: 456px;
+}
+
+.mufananidzo2{
+    height: 80vh;
+}
+
+.arrow2{
+    position: relative;
+    height: 6vh;
+    margin-top: 470px;
+    margin-left: -38px;
+}
+
+.section3 h2{
+    position: relative;
+    top: 35px;
+    font-family: "myfont";
+    font-size: 20px;
+    margin-bottom: 42px;
+    margin-left: 70px;
+}
+
+.Dig{
+    margin-left: 10px;
+    padding-top: 28px;
+}
+
+.llolo{
+    text-decoration: underline;
+}
+
+.cancel{
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 465px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.section4{
+    margin-top: 85px;
+    // margin-left: 80px;
+}
+
+.brothers{
+    width: 101%;
+    height: 47vh;
+    margin-top: 52px;
+    font-family: "myfont";
+}
+
+.boys{
+    margin-left: 3px;
+    font-family: "myfont";
+}
+
+.cofounders{
+    font-family: "myfont";
+}
+
+.brid{
+    font-family: "myfont";  
+}
+
+
+.section4 h2{
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: "myfont";
+    margin-left: 70px;
+}
+
+.section4 h4{
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.oby{
+    margin-left: 60px;
+}
+
+.section4minidiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.mirandaposition{
+    margin-right: 80px;
+    margin-bottom: 55px;
+}
+
+.mirandawife{
+    width: 101%;
+    height: 47vh;
+}
+
+.mirandaptag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "myfont";
+    margin-right: 45px; 
+
+    p{
+        margin-left: 0;
+    }
+}
+
+
+.Pictures{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "myfont"; 
+}
+
+.section5 h4 {
+    // margin-right: 200px;
+    margin-top: 90px;
+    font-size: 35px;
+}
+
+.insta{
+    margin-bottom: 55px;
+}
+
+.instagram{
+    font-family: "thefont";
+}
+
+.insta1{
+    height: 40vh;
+}
+
+.insta2{
+    position: relative;
+    height: 40vh;
+    top: 68px;
+
+}
+
+.insta3{
+    height: 40vh;
+}
+
+
+.tiglogo{
+    margin-left: 140px;
+    margin-top: 10px;
+    height: 10vh;
+}
+
+.insta4{
+    position: relative;
+    height: 40vh;
+    top: 68px;
+
+}
+
+.insta5{
+    height: 40vh;
+}
+
+.insta6{
+
+    position: relative;
+    height: 40vh;
+    top: 68px;
+
+}
+
+.section5 p{
+    margin-top: 134px;
+    font-weight: bolder;
+}
+
+
+.secction7 h4{
+           text-decoration: underline;
+}
+
+.follo{
+    margin-bottom: 15px;
+    padding: 3px;
+    color: white;
+    background-color: purple;
+    border-color: purple;
+}
+
+.CONTACT{
+    background-color: purple;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+    .about{
+        margin-top: 40px;
+
+    }
+
+    p{
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .fa{
+        margin-right: 10px;
+    }
+
+    h4{
+        margin-left: 0;
+        text-decoration: underline;
+    }
+
+    .ii{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        
+
+        img{
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        
+    
+
+        p{
+          width: 300px;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+
+
+        .icons{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+    
+    }
+}
+
+
+
+
+
+
+@media (max-width: 576px){
+
+ a {margin-right: 26px;
+    font-family: "myfont";
+    display: none;
+}
+
+
+.logo{
+        margin-left: -66px;
+        height: 6vh;
+        margin-bottom: 26px;
+}
+
+
+.darkermode {
+    position: absolute;
+    height: 18px;
+    top: 7px;
+    right: 124px;
+}
+
+
+.banner .ING {
+    margin-right: 100px;
+    margin-bottom: 4px;
+    font-weight: bolder;
+    font-size: 26px;
+    font-family: "myfont";
+}
+
+.banner p {
+    font-size: 15px;
+    font-family: "myfont";
+}
+
+.banner .button2 {
+    color: black;
+    background-color: white;
+    border-color: purple;
+    padding: 2px;
+}
+
+.banner button {
+    margin-top: 3px;
+    padding: 8px;
+    color: white;
+    background-color: purple;
+    border-color: purple;
+    padding: 3px;
+}
+
+.banner .pic1 {
+    margin-top: 31px;
+    height: 55vh;
+}
+
+
+
+.banner .pic2 {
+    padding: 1px;
+    height: 55vh;
+    margin-top: 31px;
+}
+
+
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "myfont";
+    padding-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+
+.banner .pic3 {
+    margin-top: 116px;
+    padding: 1px;
+    height: 80vh;
+    display: none;
+}
+
+.banner .pic4 {
+    padding: 1px;
+    height: 80vh;
+    display: none;
+}
+
+.section2 .sec2mini {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2 h2 {
+    font-family: "myfont";
+    font-size: 20px;
+    margin-left: 14px;
+}
+
+.dedicated{
+    margin-left: 25px;
+}
+
+.section2 .sec2mini .pecc2 {
+    height: 50vh;
+    margin-left: -5px;
+    margin-top: 82px;
+    display: none;
+}
+
+.section2 .sec2mini .picc1 {
+    height: 40vh;
+    margin-bottom: 107px;
+}
+
+.section2 .sec2mini .backk {
+    display: none;
+}
+
+.section2 .p2 {
+    font-family: "myfont";
+    margin-left: 23px;
+    margin-top: -5rem;
+}
+
+.section2 .bhatani {
+    margin-top: 10px;
+}
+
+.section33 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "myfont";
+}
+
+.section3 h2 {
+    margin-left: 14px;
+}
+
+.mufananidzo1 {
+    height: 60vh;
+}
+
+.digital{
+    width: 260px;
+    margin-top: 33px;
+    margin-left: 35px;
+    height: 73vh;
+}
+
+.cancel {
+    position: absolute;
+    margin-left: 223px;
+    margin-top: 452px;
+}
+
+.mufananidzo2 {
+    height: 60vh;
+    margin-right: 102px;
+}
+
+.arrow1 {
+    position: absolute;
+    height: 5vh;
+    margin-bottom: 1050px;
+    margin-left: 680px;
+}
+
+
+
+
+
+.arrow2 {
+    position: relative;
+    height: 6vh;
+    margin-top: 360px;
+    margin-left: -143px;
+}
+
+.section4minidiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.event{
+        display: none;
+}
+
+.section4 h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: "myfont";
+    margin-left: 20px;
+}
+
+
+.section4 h4 {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+
+.brothers {
+    width: 92%;
+    object-fit: cover;
+    height: 31vh;
+    margin-top: 52px;
+    font-family: "myfont";
+}
+
+.oby {
+    margin-left: 33px;
+    position: relative;
+}
+
+.mirandaposition{
+    position: relative;
+}
+
+.arey{
+    position: absolute;
+    top:43% ;
+    left:85% ;
+    color: white;
+    background-color: purple;
+    padding: 4px;
+}
+
+.aroy{
+    position: absolute;
+    top:41% ;
+    left:95% ;
+    background-color: purple;
+    color: white;
+    padding: 5px;
+
+}
+
+.section4 {
+    margin-top: 70px;
+}
+
+.mirandaposition {
+    margin-right: 80px;
+    margin-bottom: -40px;
+}
+
+.section2{
+    width: 373px;
+}
+
+
+.mirandawife {
+    width: 91%;
+    height: 39vh;
+    margin-left: 34px;
+}
+
+.mirandaptag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "myfont";
+    margin-left: 38px;
+    width: 216px;
+}
+
+.miri{
+    margin-left: 34px;
+}
+
+
+.brid {
+    font-family: "myfont";
+    margin-left: 37px;
+}
+
+
+
+.insta5 {
+    height: 40vh;
+    display: none;
+}
+
+.insta6 {
+    position: relative;
+    height: 40vh;
+    top: 68px;
+    display: none;
+}
+
+.insta4 {
+    position: relative;
+    height: 40vh;
+    top: 68px;
+    display: none;
+}
+
+.insta1 {
+    height: 30vh;
+}
+
+.insta2 {
+    position: relative;
+    height: 30vh;
+    top: 68px;
+}
+
+.insta3 {
+    height: 30vh;
+}
+
+.section5 p {
+    margin-top: 102px;
+    font-weight: bolder;
+}
+
+.follo {
+    margin-bottom: 15px;
+    padding: 9px;
+    font-size: 10px;
+    color: white;
+    background-color: purple;
+    border-color: purple;
+}
+
+.CONTACT {
+    background-color: purple;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+.CONTACT .ii img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-left: 71px;
+}
+
+.CONTACT .ii {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-left: 12px;
+}
+
+.jet{
+        margin-left: 12px;
+        margin-top: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width:991px){
+
+
+    .logo {
+        height: 4vh;
+    }
+
+    .banner{  .pic1 {
+        margin-top: 116px;
+        padding: 1px;
+        height: 25vh;
+    }
+    
+    .pic2 {
+        padding: 1px;
+        height: 25vh;
+    }
+
+    .pic3 {
+        margin-top: 116px;
+        padding: 1px;
+        height: 25vh;
+    }
+
+    .pic4 {
+        padding: 1px;
+        height: 25vh;
+    }
+
+    .ING{
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 12px;
+        font-family: "myfont";
+    }
+
+    button {
+        margin-top: 6px;
+        padding: 0px;
+        color: white;
+        background-color: purple;
+        border-color: purple;
+    }
+
+    .watch {
+        margin-top: 28px;
+        color: purple;
+        font-size: 12px;
+    }
+
+    .trust {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+}
+
+.darkermode {
+    position: absolute;
+    height: 22px;
+    top: 56px;
+    right: 77px;
+}
+
+a{
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 101px;
+    font-family: "myfont";
+}
+
+.section2{
+    h2 {
+        font-family: "myfont";
+        font-size: 21px;
+        margin-left: 32px;
+    }
+
+    .p1 {
+        font-family: "myfont";
+        font-size: 9px;
+        margin-left: 77px;
+    }
+
+    .pride{
+        margin-right: 20px;
+    }
+
+    .p2 {
+        font-family: "myfont";
+        margin-left: 45px;
+        font-size: 12px;
+    }
+
+    .sec2mini .picc1 {
+        height: 33vh;
+        margin-bottom: 107px;
+        margin-left: 126px;
+        display: none;
+    }
+
+    .pecc2 {
+        height: 25vh;
+        margin-left: 5px;
+        margin-top: 82px;
+    }
+
+    .backk{
+        display: none;
+    }
+
+    .dedicated{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+    }
+
+    .sec2mini .pecc2 {
+        height: 20vh;
+        margin-left: -5px;
+        margin-top: 82px;
+    }
+
+    .section3 h2{
+        margin-left: 33px;
+    }
+
+    .digital{
+        margin: 45px;
+    width: 297px;
+    height: 50vh;
+    }
+
+    .mufananidzo2 {
+        height: 35vh;
+    }
+    
+    .mufananidzo1 {
+        height: 35vh;
+    }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
